@@ -1,5 +1,11 @@
 #Francesco Pecora -- 01/30/2019
 
+'''
+This program tracks the position of an object using its color.
+Two variables define the range of the color in HSV mode. The 
+color initialized will be the one tracked by the camera. 
+'''
+
 import cv2
 
 #initializing the range of the color to be recognised
