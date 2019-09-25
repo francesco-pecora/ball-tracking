@@ -78,7 +78,7 @@ while True:
     
     #if we press the key "q", we break from the while loop
     key = cv2.waitKey(1) & 0xFF    
-    if key == ord("v"):
+    if key == ord("q"):
         break
     
 #releasing cap   
