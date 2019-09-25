@@ -9,8 +9,8 @@ color initialized will be the one tracked by the camera.
 import cv2
 
 #initializing the range of the color to be recognised
-lower_green = (23, 50, 50)
-upper_green = (37, 255, 255)
+lower_green = (53, 50, 50)   #23
+upper_green = (77, 255, 255) #37
 
 #cap rapresents our USB camera
 cap = cv2.VideoCapture(0)
@@ -78,7 +78,7 @@ while True:
     
     #if we press the key "q", we break from the while loop
     key = cv2.waitKey(1) & 0xFF    
-    if key == ord("q"):
+    if key == ord("v"):
         break
     
 #releasing cap   
