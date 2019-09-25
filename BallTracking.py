@@ -1,4 +1,4 @@
-#Francesco Pecora -- 01/30/2019
+# Francesco Pecora -- 01/30/2019
 
 '''
 This program tracks the position of an object using its color.
