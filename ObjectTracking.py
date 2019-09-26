@@ -15,8 +15,6 @@ upper_green = (37, 255, 255)
 #cap rapresents our USB camera
 cap = cv2.VideoCapture(0)
 
-
-#function that processes the frame
 def process_frame(frame):
     
     #resizing the frame to make the processing faster
@@ -38,16 +36,13 @@ def process_frame(frame):
     #scaling the frame back up
     resize_frame = cv2.pyrUp(mask)
     
-    #returning the processed frame
     return resize_frame
      
 
 while True:
     
-    #reading from the camera. Frame is the image
     ok, frame = cap.read()
     
-    #checking if the frame is available
     while not ok:
         print("Frame not found.")
         ok, frame = cap.read()
@@ -63,16 +58,11 @@ while True:
     
     #if the contour is not found, then we just display the frame as it is
     if len(video_contours) < 1:
-        
-        #displaying the frame without contours        
         cv2.imshow("Live", frame)
-        
-    else:
-        
-        #if we find a contour, then we draw it on the frame
-        cv2.drawContours(frame, sorted_contours[:2], -1, (255,255,0), 4)
-        
-        #displaying frame with contours
+    
+    #if we find a contour, then we draw it on the frame
+    else:        
+        cv2.drawContours(frame, sorted_contours[:2], -1, (255,255,0), 4)        
         cv2.imshow("Live", frame)
         
     
@@ -81,10 +71,8 @@ while True:
     if key == ord("q"):
         break
     
-#releasing cap   
+  
 cap.release()
-
-#closing windows
 cv2.destroyAllWindows()
 
 
